@@ -14,6 +14,7 @@ class Server {
         this.middlewares();
         this.conectDb();
         this.routes();
+        global.loginID = '';
     }
 
     middlewares() {
