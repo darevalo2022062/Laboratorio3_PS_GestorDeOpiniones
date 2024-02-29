@@ -1,20 +1,22 @@
 import { Router } from "express";
 import { userPost_Register } from "./user.controller.js";
 import { check } from "express-validator";
+import { validar } from "../middlewares/validate-fields.js";
 
-const route = Router();
+const router = Router();
 
 //Ruta hacía creación de usuario
-route.post(
+router.post(
     '/register',
     [
-        check('userName').not().isEmpty(),
+        check('username').not().isEmpty(),
         check('email').isEmail(),
         check('password').not().isEmpty(),
+        check('password').isLength({ min: 5 }),
         validar
     ], userPost_Register
 );
 
 
 
-export default route;
+export default router;

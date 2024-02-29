@@ -10,7 +10,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT_NUMBER;
-        this.userPath = '/opinionHive/v1/user'
+        this.userPath = '/criticsLy/v1/user';
         this.middlewares();
         this.conectDb();
         this.routes();
