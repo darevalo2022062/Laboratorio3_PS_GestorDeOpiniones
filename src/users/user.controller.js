@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import User from './user.js';
 
+
+//Función de 'Registro', creación de usuario.
 export const userPost_Register = async (req, res) => {
     var { email, username, password } = req.body;
     password = await bcrypt.hash(password, 10);
