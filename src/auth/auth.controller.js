@@ -1,11 +1,16 @@
 import bcrypt from 'bcrypt';
-import User from './user.js';
+import User from '../users/user.js';
 import { generateToken } from '../helpers/generate-jwt.js';
 
 //Validación de datos
 export const login = async (req, res) => {
     var { identifier, password } = req.body;
-    let user = await User.findOne(identifier);
+    var user = await User.findOne({
+        $or: [
+            { username: identifier },
+            { email: identifier }
+        ]
+    });
     password = await bcrypt.compare(password, user.password);
     if (password) {
         // -> CUENTA VALIDADA
@@ -13,8 +18,11 @@ export const login = async (req, res) => {
         global.loginID = null;
         global.loginID = token;
         res.status(200).json({
-            msg: 'session logged in successfully',
-            token
+            msg: 'session logged in successfully🔓✅'
+        });
+    } else {
+        res.status(200).json({
+            msg: 'Incorrect password🔒❌'
         });
     }
 }

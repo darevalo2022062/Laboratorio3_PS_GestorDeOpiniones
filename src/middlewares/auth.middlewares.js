@@ -1,4 +1,4 @@
-import User from "../users/user"
+import User from "../users/user.js"
 
 //Verificar existencia del email o username en DB
 export const indentifierExistence = async (identifier) => {
