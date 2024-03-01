@@ -20,6 +20,9 @@ router.post(
     ], userPost_Register
 );
 
-//
+//Ruta hacía actualización del usuario
+router.put(
+    
+);
 
 export default router;
