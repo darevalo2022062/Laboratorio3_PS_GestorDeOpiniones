@@ -15,8 +15,8 @@ export const login = async (req, res) => {
     if (password) {
         // -> CUENTA VALIDADA
         let token = await generateToken(user._id);
-        global.loginID = null;
-        global.loginID = token;
+        global.token = null;
+        global.token = token;
         res.status(200).json({
             msg: 'session logged in successfully🔓✅'
         });
