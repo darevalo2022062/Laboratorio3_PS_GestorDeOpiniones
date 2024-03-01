@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
+import { opinionDelete, opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
 import { check } from "express-validator";
 import { validar } from "../middlewares/validate-fields.js";
 import { categoryExistence, opinionExistence } from "../middlewares/opinion.middlewares.js";
@@ -29,6 +29,17 @@ router.put(
         opinionExistence,
         validar
     ], opinionPutUpdate
+);
+
+router.delete(
+    '/delete',
+    [
+        readToken,
+        check('tittle').not().isEmpty().withMessage('The field is empty ❌'),
+        check('date').not().isEmpty().withMessage('The field is empty ❌'),
+        opinionExistence,
+        validar
+    ], opinionDelete
 );
 
 

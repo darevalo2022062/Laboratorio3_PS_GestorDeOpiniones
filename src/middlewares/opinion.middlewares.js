@@ -23,12 +23,14 @@ export const opinionExistence = async (req, res, next) => {
                     $lte: fechaFin
                 }
             },
-            { fixedUser: global.loginID }
+            { fixedUser: global.loginID },
+            { state: true }
         ]
     });
 
     if (!opinionFind) {
-        return res.status(400).json({ msg: 'This opinion does not exists in your posts ❌' });;
+        throw new Error('This opinion does not exists in your posts ❌');
+        //return res.status(400).json({ msg: 'This opinion does not exists in your posts ❌' });;
     } else {
         req.opinionID = opinionFind._id;
     }

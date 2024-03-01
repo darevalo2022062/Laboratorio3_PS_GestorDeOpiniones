@@ -42,3 +42,12 @@ export const opinionPutUpdate = async (req, res) => {
         msg: 'Update successful✅'
     });
 }
+
+//Eliminar opinion
+export const opinionDelete = async (req, res) => {
+    var opinionID = req.opinionID;
+    await Opinion.findByIdAndUpdate(opinionID, { $set: { state: false } });
+    res.status(200).json({
+        msg: 'Delete successful✅'
+    });
+}
