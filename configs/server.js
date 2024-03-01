@@ -18,6 +18,7 @@ class Server {
         this.middlewares();
         this.conectDb();
         this.routes();
+        process.env.TZ = 'UTC';
         global.loginID = '';
         global.token = '';
     }
