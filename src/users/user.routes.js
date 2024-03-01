@@ -2,7 +2,7 @@ import { Router } from "express";
 import { userPost_Register, userPut_Update } from "./user.controller.js";
 import { check } from "express-validator";
 import { validar } from "../middlewares/validate-fields.js";
-import { uniqueEmail, uniqueUsername, validateCurrentPassword } from "../middlewares/user.middlewares.js";
+import { uniqueEmail, uniqueUsername, uniqueUsernameUpdate, validateCurrentPassword } from "../middlewares/user.middlewares.js";
 import { readToken } from "../helpers/token-helper.js";
 
 const router = Router();
@@ -28,7 +28,7 @@ router.put(
         readToken,
         check('currentPassword').not().isEmpty().withMessage('The field is empty ❌'),
         check('currentPassword').custom(validateCurrentPassword),
-        check('username').custom(uniqueUsername),
+        check('username').custom(uniqueUsernameUpdate),
         validar
     ], userPut_Update
 );

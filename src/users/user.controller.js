@@ -31,11 +31,14 @@ export const userPut_Update = async (req, res) => {
         }
 
         if (password) {
-            if(password.length > 6){
-
+            if (password.length < 5) {
+                return res.status(400).json({
+                    msg: 'The password must be greater than 5 characters'
+                });
+            } else {
+                password = await bcrypt.hash(password, 10);
+                await User.findByIdAndUpdate(user._id, { $set: { password: password } });
             }
-            password = await bcrypt.hash(password, 10);
-            await User.findByIdAndUpdate(user._id, { $set: { password: password } });
         }
 
     }
