@@ -1,25 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "PS_Auth",
-    "dateExported": "2024-03-01T04:36:26.391Z",
+    "dateExported": "2024-03-01T17:55:36.261Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "3c1386ea-2b2a-4f82-b988-07a0cdaa28ca",
-            "colId": "992078f3-f3ba-477c-a329-ba8b232fac9f",
+            "_id": "ff795861-ff51-4c3e-b9d6-2eef9939b151",
+            "colId": "2c449abb-8a1a-455a-af24-d1ed49c3ab02",
             "containerId": "",
             "name": "Login",
             "url": "http://localhost:3000/criticsLy/v1/auth/login",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2024-03-01T00:16:12.959Z",
-            "modified": "2024-03-01T04:26:39.052Z",
+            "created": "2024-03-01T13:17:05.701Z",
+            "modified": "2024-03-01T13:55:26.395Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"identifier\":\"davidA@gmail.com\",\n  \"password\":\"54321\"\n}",
+                "raw": "{\n  \"identifier\":\"DieguitoXD\",\n  \"password\":\"12345\"\n}",
                 "form": []
             },
             "tests": []

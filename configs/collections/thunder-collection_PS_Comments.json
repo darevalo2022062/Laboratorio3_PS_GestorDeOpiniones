@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "PS_Comments",
+    "dateExported": "2024-03-01T17:55:54.972Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3f32b0e6-279e-4720-9f83-66c72ddbadca",
+            "colId": "ef00f6f9-8ada-4b28-a0c1-8e8edc35736c",
+            "containerId": "",
+            "name": "Post",
+            "url": "http://localhost:3000/criticsLy/v1/comment/new",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T17:34:24.607Z",
+            "modified": "2024-03-01T17:44:38.001Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"postTittle\":\"TITUlO NEW\",\n  \"postDate\":\"2024-03-01\",\n  \"commentText\":\"Me parece super Interesante\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
