@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "PS_Users",
+    "dateExported": "2024-03-01T04:35:00.430Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d2690d3a-ae2e-4d4c-af2a-e7161b112a21",
+            "colId": "af1c614b-e473-4257-9e58-cf63db74da96",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:3000/criticsLy/v1/user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T21:35:00.212Z",
+            "modified": "2024-03-01T03:33:55.958Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"CarlosA\",\n  \"email\": \"CarlosA@gmail.com\",\n  \"password\": \"12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0564f627-808c-4d88-a4d3-633a7bcc1d00",
+            "colId": "af1c614b-e473-4257-9e58-cf63db74da96",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:3000/criticsLy/v1/user/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-01T02:43:46.869Z",
+            "modified": "2024-03-01T03:35:47.976Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"currentPassword\":\"54321\",\n  \"password\":\"54321\",\n  \"username\":\"CarlosA\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

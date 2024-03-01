@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "PS_Auth",
+    "dateExported": "2024-03-01T04:36:26.391Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3c1386ea-2b2a-4f82-b988-07a0cdaa28ca",
+            "colId": "992078f3-f3ba-477c-a329-ba8b232fac9f",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:3000/criticsLy/v1/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-01T00:16:12.959Z",
+            "modified": "2024-03-01T04:26:39.052Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"identifier\":\"davidA@gmail.com\",\n  \"password\":\"54321\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "PS_Opinion",
+    "dateExported": "2024-03-01T04:36:30.594Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "95b7af76-5cd3-4408-ab36-2764468c8f2c",
+            "colId": "13a81094-ccf3-4a02-ae30-67d52264c20b",
+            "containerId": "",
+            "name": "Post",
+            "url": "http://localhost:3000/criticsLy/v1/opinion/new",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-01T04:11:55.463Z",
+            "modified": "2024-03-01T04:27:12.248Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tittle\": \"Nueva IA\",\n  \"category\": \"NEWS\",\n  \"mainText\": \"Sale un nueva IA para programadores\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
