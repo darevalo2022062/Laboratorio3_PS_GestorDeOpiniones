@@ -7,6 +7,7 @@ import { dbConnection } from './mongo.js';
 import userPath from '../src/users/user.routes.js';
 import authPath from '../src/auth/auth.routes.js';
 import opinionPath from '../src/opinions/opinion.routes.js';
+import commentPath from '../src/comments/comment.routes.js';
 
 class Server {
     constructor() {
@@ -14,7 +15,8 @@ class Server {
         this.port = process.env.PORT_NUMBER;
         this.userPath = '/criticsLy/v1/user';
         this.authPath = '/criticsLy/v1/auth';
-        this.opinionPath = '/criticsLy/v1/opinion'
+        this.opinionPath = '/criticsLy/v1/opinion';
+        this.commentPath = '/criticsLy/v1/comment'
         this.middlewares();
         this.conectDb();
         this.routes();
@@ -40,6 +42,7 @@ class Server {
         this.app.use(this.userPath, userPath);
         this.app.use(this.authPath, authPath);
         this.app.use(this.opinionPath, opinionPath);
+        this.app.use(this.commentPath, commentPath);
     }
 
     async conectDb() {
