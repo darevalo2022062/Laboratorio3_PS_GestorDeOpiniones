@@ -13,6 +13,10 @@ const CommentSchema = Schema({
         type: String,
         required: [true, 'This is mandatory information.']
     },
+    commentDate: {
+        type: Date,
+        default: Date.now
+    },
     state: {
         type: Boolean,
         default: true

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { commentPostCreate } from "./comment.controller.js";
+import { commentPostCreate, commentPutUpdate } from "./comment.controller.js";
 import { readToken } from "../helpers/token-helper.js";
 import { check } from "express-validator";
-import { opinionExistenceComm } from "../middlewares/comment.middlewares.js";
+import { commentExists, opinionExistenceComm } from "../middlewares/comment.middlewares.js";
 import { validar } from "../middlewares/validate-fields.js";
 
 const router = Router();
@@ -14,9 +14,20 @@ router.post(
         check('postTittle').not().isEmpty().withMessage('The field is empty ❌'),
         check('postDate').not().isEmpty().withMessage('The field is empty ❌'),
         check('commentText').not().isEmpty().withMessage('The field is empty ❌'),
-        opinionExistenceComm,
-        validar
+        validar,
+        opinionExistenceComm
     ], commentPostCreate
+);
+
+router.put(
+    '/update',
+    [
+        readToken,
+        check('commentDate').not().isEmpty().withMessage('The field is empty ❌'),
+        check('commentText').not().isEmpty().withMessage('The field is empty ❌'),
+        validar,
+        commentExists
+    ], commentPutUpdate
 );
 
 export default router;

@@ -26,6 +26,7 @@ class Server {
         moment.tz.setDefault(zonaHoraria);
         global.loginID = '';
         global.token = '';
+        global.commentID = '';
     }
 
     middlewares() {
