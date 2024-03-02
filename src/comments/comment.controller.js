@@ -19,6 +19,7 @@ export const commentPutUpdate = async (req, res) => {
     const commentID = global.commentID;
     console.log("El comment ID: " + commentID);
     await Comment.findByIdAndUpdate(commentID, { $set: { commentText: commentText } });
+    global.commentID = 0;
     res.status(200).json({
         msg: 'Comment updated successfully✅'
     });

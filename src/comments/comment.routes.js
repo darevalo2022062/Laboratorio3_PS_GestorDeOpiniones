@@ -25,6 +25,7 @@ router.put(
         readToken,
         check('commentDate').not().isEmpty().withMessage('The field is empty ❌'),
         check('commentText').not().isEmpty().withMessage('The field is empty ❌'),
+        check('numberComment').not().isEmpty().withMessage('The field is empty ❌'),
         validar,
         commentExists
     ], commentPutUpdate

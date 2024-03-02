@@ -39,22 +39,21 @@ export const opinionExistenceComm = async (req, res, next) => {
 }
 
 export const commentExists = async (req, res, next) => {
-    var { commentDate, tittlePost } = req.body;
+    var { commentDate, tittlePost, numberComment } = req.body;
     commentDate = commentDate + 'T12:00:00';
     const fechaInicio = new Date(commentDate);
     fechaInicio.setHours(0, 0, 0, 0);
     const fechaFin = new Date(commentDate);
     fechaFin.setHours(23, 59, 59, 999);
-
+    let bandera = false;
     var commentFind = null;
 
     var opinions = await Opinion.find({ tittle: tittlePost });
-    console.log("Estan son las opiniones: " + opinions);
+
     if (opinions) {
         for (var element of opinions) {
-            console.log("FixedOpinion: " + element._id);
-            console.log('fixedUser: ' + global.loginID);
-            commentFind = await Comment.findOne({
+
+            commentFind = await Comment.find({
                 fixedOpinion: element._id,
                 fixedUser: global.loginID,
                 commentDate: {
@@ -65,12 +64,24 @@ export const commentExists = async (req, res, next) => {
             });
 
             if (commentFind) {
-                global.commentID = commentFind._id;
+                let cont = -1;
+                numberComment = numberComment - 1;
+                commentFind.forEach(element => {
+                    cont++;
+                    if (cont == numberComment) {
+                        global.commentID = element._id;
+                        bandera = true;
+                    }
+                });
+
             }
         }
+
+
     }
 
-    if (!commentFind) {
+    if (!commentFind || commentFind == '' || bandera == false) {
+        console.log("Ci entra");
         return res.status(400).json({
             msg: 'This comment does not exists in your comments ❌'
         });
