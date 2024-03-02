@@ -2,7 +2,6 @@ import Opinion from "../opinions/opinion.js";
 
 export const opinionExistenceComm = async (req, res, next) => {
     var { postTittle, postDate } = req.body;
-    console.log("ESTE ES EL DATE: " + postDate);
     const fechaInicio = new Date(postDate);
     fechaInicio.setHours(0, 0, 0, 0);
     const fechaFin = new Date(postDate);
@@ -22,7 +21,10 @@ export const opinionExistenceComm = async (req, res, next) => {
     });
 
     if (!opinionFind) {
-        throw new Error('This opinion does not exists in your posts ❌');
+        //throw new Error('This opinion does not exists posts ❌');
+        return res.status(400).json({
+            msg: 'This opinion does not exists posts ❌'
+        });
     } else {
         req.opinionID = opinionFind._id;
     }

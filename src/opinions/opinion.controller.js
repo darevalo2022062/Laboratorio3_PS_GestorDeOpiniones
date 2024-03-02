@@ -5,11 +5,12 @@ export const opinionPostCreate = async (req, res) => {
     var { tittle, category, mainText } = req.body;
     let fixedUser = global.loginID;
     var opinion = '';
+    const datePost = new Date();
     try {
         opinion = new Opinion({ fixedUser, tittle, category, mainText });
         category == '' ? category = 'GENERAL' : {};
         await opinion.save();
-        let opinionClean = { tittle, category, mainText };
+        let opinionClean = { tittle, category, mainText, datePost };
         res.status(200).json({
             msg: 'Opinion published successfully✅',
             opinionClean
