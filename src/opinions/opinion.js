@@ -19,7 +19,7 @@ const OpinionSchema = Schema({
     },
     datePost: {
         type: Date,
-        default: ''
+        default: Date.now
     },
     state: {
         type: Boolean,

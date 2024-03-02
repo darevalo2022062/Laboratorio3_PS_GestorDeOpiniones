@@ -3,11 +3,13 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
+import moment from 'moment-timezone';
 import { dbConnection } from './mongo.js';
 import userPath from '../src/users/user.routes.js';
 import authPath from '../src/auth/auth.routes.js';
 import opinionPath from '../src/opinions/opinion.routes.js';
 import commentPath from '../src/comments/comment.routes.js';
+
 
 class Server {
     constructor() {
@@ -20,7 +22,8 @@ class Server {
         this.middlewares();
         this.conectDb();
         this.routes();
-        process.env.TZ = 'UTC';
+        const zonaHoraria = 'America/Guatemala';
+        moment.tz.setDefault(zonaHoraria);
         global.loginID = '';
         global.token = '';
     }
