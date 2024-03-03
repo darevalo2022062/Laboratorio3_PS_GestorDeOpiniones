@@ -84,6 +84,7 @@ export const opinionGet = async (req, res) => {
     }
 }
 
+//Post
 export const opinionGetMiPost = async (req, res) => {
     const userID = global.loginID;
     const opinions = await Opinion.find({ state: true, fixedUser: userID });
