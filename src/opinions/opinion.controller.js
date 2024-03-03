@@ -64,7 +64,8 @@ export const opinionGet = async (req, res) => {
             const user = await User.findById(idUser);
             const publishedBy = user ? user.username : null;
             return {
-                Published_By: publishedBy,
+                published_By: publishedBy,
+                publicationDay: opinion.datePost,
                 tittle: opinion.tittle,
                 category: opinion.category,
                 mainText: opinion.mainText
@@ -81,5 +82,28 @@ export const opinionGet = async (req, res) => {
             msg: "There are currently no posts :/"
         });
     }
-
 }
+
+export const opinionGetMiPost = async (req, res) => {
+    const userID = global.loginID;
+    const opinions = await Opinion.find({ state: true, fixedUser: userID });
+    if (opinions.length > 0) {
+        const opinionInfo = opinions.map(opinion => {
+            return {
+                publicationDay: opinion.datePost,
+                tittle: opinion.tittle,
+                category: opinion.category,
+                mainText: opinion.mainText
+            };
+        });
+        return res.status(200).json({
+            msg: "POST",
+            opinionInfo
+        });
+    } else {
+        return res.status(400).json({
+            msg: "There are currently no posts :/"
+        });
+    }
+
+} 

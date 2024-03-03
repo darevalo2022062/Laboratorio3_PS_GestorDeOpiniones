@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { opinionDelete, opinionGet, opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
+import { opinionDelete, opinionGet, opinionGetMiPost, opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
 import { check } from "express-validator";
 import { validar } from "../middlewares/validate-fields.js";
 import { categoryExistence, opinionExistence } from "../middlewares/opinion.middlewares.js";
@@ -48,6 +48,14 @@ router.get(
         readToken,
         validar
     ], opinionGet
+);
+
+router.get(
+    '/getMe',
+    [
+        readToken,
+        validar
+    ], opinionGetMiPost
 );
 
 export default router;
