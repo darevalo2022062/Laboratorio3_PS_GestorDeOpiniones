@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "65e3a5899cb019a7723e42d8"
+  },
+  "fixedUser": "65e29bd98342abcb00fe6c55",
+  "fixedOpinion": "65e3856721a16931379687c5",
+  "commentText": "El café me ayuda a programar mejor y obvio... me encanta!",
+  "state": true,
+  "commentDate": {
+    "$date": "2024-03-02T22:17:45.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e3a5969cb019a7723e42db"
+  },
+  "fixedUser": "65e29bd98342abcb00fe6c55",
+  "fixedOpinion": "65e3856721a16931379687c5",
+  "commentText": "Pronto ire a Guatemala.",
+  "state": true,
+  "commentDate": {
+    "$date": "2024-03-02T22:17:58.237Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e4a1bd7ef8e721f5ae77e3"
+  },
+  "fixedUser": "65e29bd98342abcb00fe6c55",
+  "fixedOpinion": "65e3856721a16931379687c5",
+  "commentText": "Obvio, guatemala es el 7.mo exportador de cafe gourmet del mundo",
+  "state": true,
+  "commentDate": {
+    "$date": "2024-03-03T16:13:49.392Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e4f9812ffd2de03797bdf4"
+  },
+  "fixedUser": "65e29bd28342abcb00fe6c51",
+  "fixedOpinion": "65e3856721a16931379687c5",
+  "commentText": "Ci ci... CIIII!!",
+  "state": true,
+  "commentDate": {
+    "$date": "2024-03-03T22:28:17.830Z"
+  },
+  "__v": 0
+}]

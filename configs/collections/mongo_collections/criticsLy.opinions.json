@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "65e3856721a16931379687c5"
+  },
+  "fixedUser": "65e29bc28342abcb00fe6c4b",
+  "tittle": "El mejor café de Guatemala",
+  "category": "LIFESTYLE",
+  "mainText": "El mejor café gourmet de guatemala esta cultivado en una variedad de fincas al rededor del volcán de Agua, especialmente hecho para programadores.",
+  "state": true,
+  "datePost": {
+    "$date": "2024-03-02T20:00:39.681Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e4db6f6fefa365b7d1689e"
+  },
+  "fixedUser": "65e29bd28342abcb00fe6c51",
+  "tittle": "Cambio climático",
+  "category": "NEWS",
+  "mainText": "EL volcán de agua sigue en peligro, gracias a los incendios forestales que ocurren actualmente",
+  "state": true,
+  "datePost": {
+    "$date": "2024-03-03T20:19:59.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e4de316fefa365b7d168a2"
+  },
+  "fixedUser": "65e29bd98342abcb00fe6c55",
+  "tittle": "Filas enormes en la entrada del concierto en Guatemala",
+  "category": "ENTERTAIMENT",
+  "mainText": "En el último concierto ocurrido el pasado sábado en la ciudad de Guatemala se reportaron personas con incoformidad por el gran tráfico",
+  "state": true,
+  "datePost": {
+    "$date": "2024-03-03T20:31:45.464Z"
+  },
+  "__v": 0
+}]

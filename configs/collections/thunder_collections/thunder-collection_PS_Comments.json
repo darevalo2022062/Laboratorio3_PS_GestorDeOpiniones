@@ -1,25 +1,82 @@
 {
     "client": "Thunder Client",
     "collectionName": "PS_Comments",
-    "dateExported": "2024-03-01T17:55:54.972Z",
+    "dateExported": "2024-03-03T22:48:47.055Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "3f32b0e6-279e-4720-9f83-66c72ddbadca",
-            "colId": "ef00f6f9-8ada-4b28-a0c1-8e8edc35736c",
+            "_id": "5ef1c298-8ca8-4be0-8c4e-1d31594e7e8e",
+            "colId": "5b8f02a8-d9d6-4b5d-8f91-437e79045feb",
             "containerId": "",
             "name": "Post",
             "url": "http://localhost:3000/criticsLy/v1/comment/new",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-01T17:34:24.607Z",
-            "modified": "2024-03-01T17:44:38.001Z",
+            "created": "2024-03-02T03:07:38.309Z",
+            "modified": "2024-03-03T22:28:16.068Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"postTittle\":\"TITUlO NEW\",\n  \"postDate\":\"2024-03-01\",\n  \"commentText\":\"Me parece super Interesante\"\n}",
+                "raw": "{\n  \"postTittle\":\"El mejor café de Guatemala\",\n  \"postDate\":\"2024-03-02\",\n  \"commentText\":\"Ci ci... CIIII!!\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "646d1d7f-c8f3-4af4-b36d-7b965cd0f668",
+            "colId": "5b8f02a8-d9d6-4b5d-8f91-437e79045feb",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:3000/criticsLy/v1/comment/update",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-02T21:34:04.975Z",
+            "modified": "2024-03-03T19:23:55.479Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"commentDate\": \"2024-03-02\",\n  \"tittlePost\": \"El mejor café de Guatemala\",\n  \"numberComment\": 2,\n  \"commentText\": \"PELE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7c86ed6a-4a4e-4e98-a042-2253e9c78a24",
+            "colId": "5b8f02a8-d9d6-4b5d-8f91-437e79045feb",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://localhost:3000/criticsLy/v1/comment/delete",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-03T19:17:38.584Z",
+            "modified": "2024-03-03T19:20:17.892Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"commentDate\": \"2024-03-02\",\n  \"tittlePost\": \"El mejor café de Guatemala\",\n  \"numberComment\": 3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec97f6d6-9223-4f7c-8dfc-101557496a0f",
+            "colId": "5b8f02a8-d9d6-4b5d-8f91-437e79045feb",
+            "containerId": "",
+            "name": "Get_viewCommentsByPost",
+            "url": "http://localhost:3000/criticsLy/v1/comment/get",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-03T22:17:46.540Z",
+            "modified": "2024-03-03T22:21:53.110Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"postTittle\":\"El mejor café de Guatemala\",\n  \"postDate\":\"2024-03-02\"\n}",
                 "form": []
             },
             "tests": []

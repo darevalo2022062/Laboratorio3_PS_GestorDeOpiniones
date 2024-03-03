@@ -1,3 +1,4 @@
+import User from "../users/user.js";
 import Comment from "./comment.js";
 
 export const commentPostCreate = async (req, res) => {
@@ -26,10 +27,36 @@ export const commentPutUpdate = async (req, res) => {
 
 export const commentDelete = async (req, res) => {
     const commentID = global.commentID;
-    console.log("Este es el ID que llega: " + commentID);
     await Comment.findByIdAndUpdate(commentID, { $set: { state: false } });
     res.status(200).json({
         MSG: 'Comment delete successfully✅'
     });
+
+}
+
+//Ver Comentario por publicación
+export const commentViewByPost = async (req, res) => {
+    const opinionID = req.opinionID;
+    var comments = await Comment.find({ fixedOpinion: opinionID });
+    if (comments.length > 0) {
+        const commentsInfoPromises = comments.map(async comment => {
+            var userID = comment.fixedUser;
+            var user = await User.findById(userID);
+            var userNameJust = user.username;
+            if (userID == global.loginID) {
+                userNameJust = 'YOU';
+            }
+            return {
+                published_By: userNameJust,
+                publicationDay: comment.commentDate,
+                comment: comment.commentText
+            };
+        });
+        const commentsInfo = await Promise.all(commentsInfoPromises);
+        return res.status(200).json({
+            msg: "COMMENTS",
+            commentsInfo
+        });
+    }
 
 }

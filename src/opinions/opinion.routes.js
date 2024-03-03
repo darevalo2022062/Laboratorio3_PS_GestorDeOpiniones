@@ -26,8 +26,8 @@ router.put(
         check('tittle').not().isEmpty().withMessage('The field is empty ❌'),
         check('date').not().isEmpty().withMessage('The field is empty ❌'),
         check('category').custom(categoryExistence),
-        opinionExistence,
-        validar
+        validar,
+        opinionExistence
     ], opinionPutUpdate
 );
 
@@ -37,8 +37,8 @@ router.delete(
         readToken,
         check('tittle').not().isEmpty().withMessage('The field is empty ❌'),
         check('date').not().isEmpty().withMessage('The field is empty ❌'),
-        opinionExistence,
-        validar
+        validar,
+        opinionExistence
     ], opinionDelete
 );
 

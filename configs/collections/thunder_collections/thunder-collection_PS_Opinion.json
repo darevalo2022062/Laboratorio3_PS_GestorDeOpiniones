@@ -1,39 +1,39 @@
 {
     "client": "Thunder Client",
     "collectionName": "PS_Opinion",
-    "dateExported": "2024-03-01T17:55:44.524Z",
+    "dateExported": "2024-03-03T22:48:59.756Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "9ad29d4e-fe1d-4529-bbc7-8784d2561f84",
-            "colId": "5ad1d683-843f-4667-b6f4-c7032a8672e8",
+            "_id": "661d3bdc-8020-45d3-8d1b-7de1222a2181",
+            "colId": "37a09797-8a21-43b5-b84e-feadfc0714c2",
             "containerId": "",
             "name": "Post",
             "url": "http://localhost:3000/criticsLy/v1/opinion/new",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2024-03-01T13:17:13.736Z",
-            "modified": "2024-03-01T13:17:13.736Z",
+            "created": "2024-03-02T03:07:38.333Z",
+            "modified": "2024-03-03T20:31:27.978Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"tittle\": \"Nueva IA\",\n  \"category\": \"NEWS\",\n  \"mainText\": \"Sale un nueva IA para programadores\"\n}",
+                "raw": "{\n  \"tittle\": \"Filas enormes en la entrada del concierto en Guatemala\",\n  \"category\": \"ENTERTAIMENT\",\n  \"mainText\": \"En el último concierto ocurrido el pasado sábado en la ciudad de Guatemala se reportaron personas con incoformidad por el gran tráfico\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "955aafae-4518-4616-942e-5b1c0c8af28e",
-            "colId": "5ad1d683-843f-4667-b6f4-c7032a8672e8",
+            "_id": "73cd3ef5-adc0-41d8-834e-36c3f22baae7",
+            "colId": "37a09797-8a21-43b5-b84e-feadfc0714c2",
             "containerId": "",
             "name": "Update",
             "url": "http://localhost:3000/criticsLy/v1/opinion/update",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-01T14:23:42.717Z",
-            "modified": "2024-03-01T15:20:38.623Z",
+            "created": "2024-03-02T03:07:38.334Z",
+            "modified": "2024-03-02T03:07:38.334Z",
             "headers": [],
             "params": [],
             "body": {
@@ -44,15 +44,15 @@
             "tests": []
         },
         {
-            "_id": "476969b5-e652-467d-8afb-3e91c8799f42",
-            "colId": "5ad1d683-843f-4667-b6f4-c7032a8672e8",
+            "_id": "96d4ed2c-bbc6-4cf8-9a4a-7ac89901f9c2",
+            "colId": "37a09797-8a21-43b5-b84e-feadfc0714c2",
             "containerId": "",
             "name": "Delete",
             "url": "http://localhost:3000/criticsLy/v1/opinion/delete",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-03-01T16:29:26.417Z",
-            "modified": "2024-03-01T16:30:11.696Z",
+            "created": "2024-03-02T03:07:38.335Z",
+            "modified": "2024-03-02T03:07:38.335Z",
             "headers": [],
             "params": [],
             "body": {
@@ -60,6 +60,34 @@
                 "raw": "{\n  \"tittle\": \"TITUlO NEW\",\n  \"date\": \"2024-03-01\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "65b40f99-2600-45a2-9501-1502c04752d0",
+            "colId": "37a09797-8a21-43b5-b84e-feadfc0714c2",
+            "containerId": "",
+            "name": "view_Home",
+            "url": "http://localhost:3000/criticsLy/v1/opinion/get",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-03T21:11:58.010Z",
+            "modified": "2024-03-03T21:12:22.784Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c157507f-9ec1-4559-bfe4-0fd2d1b17ece",
+            "colId": "37a09797-8a21-43b5-b84e-feadfc0714c2",
+            "containerId": "",
+            "name": "view_MyPost",
+            "url": "http://localhost:3000/criticsLy/v1/opinion/getMe",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-03T21:59:18.435Z",
+            "modified": "2024-03-03T21:59:43.857Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]
