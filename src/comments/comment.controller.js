@@ -17,10 +17,19 @@ export const commentPostCreate = async (req, res) => {
 export const commentPutUpdate = async (req, res) => {
     var { commentText } = req.body;
     const commentID = global.commentID;
-    console.log("El comment ID: " + commentID);
     await Comment.findByIdAndUpdate(commentID, { $set: { commentText: commentText } });
     global.commentID = 0;
     res.status(200).json({
         msg: 'Comment updated successfully✅'
     });
+}
+
+export const commentDelete = async (req, res) => {
+    const commentID = global.commentID;
+    console.log("Este es el ID que llega: " + commentID);
+    await Comment.findByIdAndUpdate(commentID, { $set: { state: false } });
+    res.status(200).json({
+        MSG: 'Comment delete successfully✅'
+    });
+
 }
