@@ -1,4 +1,5 @@
 import Opinion from './opinion.js';
+import User from '../users/user.js';
 
 //Creando opinión
 export const opinionPostCreate = async (req, res) => {
@@ -50,4 +51,35 @@ export const opinionDelete = async (req, res) => {
     res.status(200).json({
         msg: 'Delete successful✅'
     });
+}
+
+//Visualizar todas las opiniones
+export const opinionGet = async (req, res) => {
+    const userID = global.loginID;
+    const opinions = await Opinion.find({ state: true, fixedUser: { $ne: userID } });
+    if (opinions.length > 0) {
+
+        const opinionInfoPromises = opinions.map(async opinion => {
+            var idUser = opinion.fixedUser;
+            const user = await User.findById(idUser);
+            const publishedBy = user ? user.username : null;
+            return {
+                Published_By: publishedBy,
+                tittle: opinion.tittle,
+                category: opinion.category,
+                mainText: opinion.mainText
+            };
+        });
+
+        const opinionInfo = await Promise.all(opinionInfoPromises);
+        return res.status(200).json({
+            msg: "POST",
+            opinionInfo
+        });
+    } else {
+        return res.status(400).json({
+            msg: "There are currently no posts :/"
+        });
+    }
+
 }

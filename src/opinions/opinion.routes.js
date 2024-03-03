@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { opinionDelete, opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
+import { opinionDelete, opinionGet, opinionPostCreate, opinionPutUpdate } from "./opinion.controller.js";
 import { check } from "express-validator";
 import { validar } from "../middlewares/validate-fields.js";
 import { categoryExistence, opinionExistence } from "../middlewares/opinion.middlewares.js";
@@ -42,5 +42,12 @@ router.delete(
     ], opinionDelete
 );
 
+router.get(
+    '/get',
+    [
+        readToken,
+        validar
+    ], opinionGet
+);
 
 export default router;
